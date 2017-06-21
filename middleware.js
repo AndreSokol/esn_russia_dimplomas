@@ -13,7 +13,7 @@ var configureServer = function (app) {
     app.set('views', './templates/'); // so root folder for templates is set here
 
     // setting up static files
-    app.use('/st', "d:/code/esn_russia_diplomas/public/");
+    app.use('/st', express.static("d:/code/esn_russia_diplomas/public/"));
 
 /*    // disabling CORS
     app.use("*", (req, res, next) => {
