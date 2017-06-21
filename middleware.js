@@ -10,10 +10,10 @@ var configureServer = function (app) {
     // Setting default engine for response rendering
     app.set('view engine', 'ejs');
     // 'views' is not views folder but templates, so fuck my life
-    //app.set('views', './templates/'); // so root folder for templates is set here
+    app.set('views', './templates/'); // so root folder for templates is set here
 
     // setting up static files
-    app.use('/st', express.static("d:/code/esn_russia_diplomas/public/"));
+    app.use('/st', "d:/code/esn_russia_diplomas/public/");
 
 /*    // disabling CORS
     app.use("*", (req, res, next) => {

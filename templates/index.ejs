@@ -1,0 +1,24 @@
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="/st/js/vendor/jquery.ui.widget.js"></script>
+<script src="/st/js/jquery.iframe-transport.js"></script>
+<script src="/st/js/jquery.fileupload.js"></script>
+<input id="imgupload" type="file" name="pic">
+
+<script>
+$(function () {
+    $('#imgupload').fileupload({
+        url: window.location + "upload",
+        dataType: 'json',
+        done: function (e, data) {
+            console.log("done");
+            console.log(data);
+            $('#test').append("<img class='test' src='" + data.result.url + "'>");
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            console.log(data);
+        }
+    });
+});
+</script>
+<div id="test"></div>
